@@ -8,6 +8,7 @@ RSpec.describe NewsController, type: :controller do
       get :index
 
       expect(response).to be_ok
+      expect(assigns[:news]).to be_present
     end
   end
 end
