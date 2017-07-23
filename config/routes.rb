@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'news/index' => 'news#index'
+  get 'news' => 'news#index'
 end
