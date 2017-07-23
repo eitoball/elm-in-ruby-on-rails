@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'お知らせ表示', type: :feature, js: true do
+  before do
+    News.create!(title: '会社設立', published_at: Time.zone.local(2017, 8, 1))
+  end
+
   scenario 'お知らせを表示する' do
     visit '/news'
 
