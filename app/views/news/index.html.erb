@@ -1,8 +1,13 @@
 <div id="news">
-  <%= link_to 'お知らせ', '#' %>
-  <% @news.each do |news| %>
-    <div>
-      <div><%= news.title %></div>
-      <div><%= news.published_at.strftime('%Y年%m月%d日') %></div>
-  <% end %>
+  <%= link_to 'お知らせ', '#', v: { on: 'click: toggleNewsContent' } %>
+  <div>
+    <% @news.each do |news| %>
+      <div>
+        <div><%= news.title %></div>
+        <div><%= news.published_at.strftime('%Y年%m月%d日') %></div>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<%= javascript_pack_tag('news_vue') %>
